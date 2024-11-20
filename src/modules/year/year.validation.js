@@ -61,7 +61,7 @@ export const createCategorySchema = joi.object({
   categoryName: joi.string().required(),
   facultyName: joi.string().required(),
   yearName: joi.string().required(),
-  subjectName: joi.string(),
+  subject: joi.array(),
   paid: joi.boolean()
 })
 .required()
@@ -72,7 +72,7 @@ export const updateCategorySchema =  joi.object({
   categoryName: joi.string(),
   facultyName: joi.string().required(),
   yearName: joi.string().required(),
-  subjectName: joi.string(),
+  subject: joi.array(),
   paid: joi.boolean()
 })
 .required()

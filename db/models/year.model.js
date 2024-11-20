@@ -1,7 +1,10 @@
 import mongoose, { Schema, Types, model } from "mongoose";
 
 
-// Define the category schema
+export const subjectSchema = new Schema({
+  name: { type: String, required: true },
+}, { _id: true }); 
+
 export const categorySchema = new Schema({
   categoryName: { type: String,
     enum: ["التعليم الاكاديمي للكبار"],
@@ -12,10 +15,7 @@ export const categorySchema = new Schema({
   yearName: { type: String,
     enum: ["1", "2", "3", "4"],
     required: true },
-  subjectName: {
-    type: String,
-    required: true,
-  },
+  subject: [subjectSchema],
   paid: {
     type: Boolean ,
     default: false 
@@ -31,4 +31,5 @@ categorySchema.virtual("Lecture", {
 })
 
 // model
+export const Subject = mongoose.Subject || model("Subject", subjectSchema);
 export const Category = mongoose.Category || model("Category", categorySchema)

@@ -1,9 +1,9 @@
 import mongoose, { Schema, Types, model } from "mongoose";
 
 export const lectureSchema = new Schema({
-  categoryId: {
+  subject_Id: {
       type: Types.ObjectId,
-      ref: "Category",
+      ref: "Subject",
       required: true
   },
   lecture: [{

@@ -3,7 +3,7 @@ import { isValidObjectId } from './../../middleware/validation.middleware.js'
 
 // create lecture
 export const createLectureSchema = joi.object({
-  categoryId: joi.string().required(),
+  subject_Id: joi.string().required(),
   lecture: [{
     createdBy: joi.string().custom(isValidObjectId),
     name: joi.string().required(),
@@ -15,7 +15,7 @@ export const createLectureSchema = joi.object({
 
 // update lecture
 export const updateLectureSchema = joi.object({
-  categoryId: joi.string().required(),
+  subject_Id: joi.string().required(),
   lectureId: joi.string(),
   lecture: [{
     name: joi.string().required(),

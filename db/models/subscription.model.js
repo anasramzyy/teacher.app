@@ -12,19 +12,14 @@ export const subscriptionSchema = new Schema({
     ref: 'Category', 
     required: true,
   },
-  facultyId: {
+  facultyNameId: {
     type: Types.ObjectId,
-    ref: 'Faculty', 
+    ref: 'Category', 
     required: true,
   },
-  yearId: {
+  yearNameId: {
     type: Types.ObjectId,
-    ref: 'Year', 
-    required: true,
-  },
-  courseId: {
-    type: Types.ObjectId,
-    ref: 'Course',
+    ref: 'Category', 
     required: true,
   },
   subscriptionDate: {
